@@ -933,35 +933,35 @@
                                     <rect key="frame" x="2" y="2" width="321" height="140"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGr-5L-VXp">
-                                            <rect key="frame" x="20" y="94" width="281" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="file1.txt, file2.txt, file3.txt" drawsBackground="YES" id="zRB-Sm-1tn">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2m-8r-Ifi">
-                                            <rect key="frame" x="64" y="116" width="193" height="17"/>
+                                            <rect key="frame" x="46" y="116" width="234" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Имена файлов через запятую" id="cm8-A1-50v">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Введите имена 1-ого и 2-ого файла:" id="cm8-A1-50v">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-Y7-m6V">
-                                            <rect key="frame" x="100" y="69" width="121" height="17"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vht-Ps-RWa">
+                                            <rect key="frame" x="27" y="107" width="266" height="11"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Имя нового файла" id="D8c-nb-A9p">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/Users/lawr/Library/Containers/JA.GenDic/Data/Documents/" id="xbO-sZ-str">
+                                                <font key="font" metaFont="system" size="9"/>
+                                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-Y7-m6V">
+                                            <rect key="frame" x="100" y="60" width="125" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Имя нового файла:" id="D8c-nb-A9p">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nss-T4-j52">
-                                            <rect key="frame" x="45" y="8" width="231" height="32"/>
+                                            <rect key="frame" x="45" y="2" width="231" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Объединить текстовые файлы" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wwH-Lb-Td1">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -972,9 +972,27 @@
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-aH-RVV">
-                                            <rect key="frame" x="110" y="47" width="100" height="22"/>
+                                            <rect key="frame" x="110" y="37" width="100" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="newfile.txt" drawsBackground="YES" id="Fln-d0-Kxa">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="newfile.txt" placeholderString="newfile.txt" drawsBackground="YES" id="Fln-d0-Kxa">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-KJ-yjd">
+                                            <rect key="frame" x="173" y="81" width="118" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="file2.txt" placeholderString="file2.txt" drawsBackground="YES" id="Pzp-3e-5gI">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGr-5L-VXp">
+                                            <rect key="frame" x="29" y="81" width="118" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="file1.txt" placeholderString="file1.txt" drawsBackground="YES" id="zRB-Sm-1tn">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -989,7 +1007,8 @@
                         <outlet property="EditMaska" destination="qyH-JA-OgO" id="xH8-Ci-IXR"/>
                         <outlet property="EditSave" destination="wbZ-OA-IkI" id="dU0-MB-KqH"/>
                         <outlet property="NameFileFinish" destination="wvv-aH-RVV" id="03e-rz-5Da"/>
-                        <outlet property="NameFileStart" destination="PGr-5L-VXp" id="0EA-d4-6Fb"/>
+                        <outlet property="NameFileOne" destination="PGr-5L-VXp" id="yQg-3u-bnI"/>
+                        <outlet property="NameFileTwo" destination="fE9-KJ-yjd" id="2bM-pq-Ybz"/>
                         <outlet property="ProgressLine" destination="Zai-5k-4PS" id="vjC-df-obV"/>
                         <outlet property="ProgressText" destination="0G3-th-ZM6" id="pGx-bk-jvQ"/>
                         <outlet property="ViewAbout" destination="VCO-2h-2Px" id="sca-yh-hRL"/>

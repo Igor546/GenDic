@@ -16,7 +16,6 @@ import Cocoa
    str.substring(fromIndex: 3) // returns "def"
    str.substring(toIndex: str.length - 2) // returns "abcd"
 */
-
 extension String {
     var length: Int { return self.characters.count }
     subscript (i: Int) -> String { return self[i ..< i + 1] }
@@ -36,6 +35,49 @@ extension String {
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ..< end])
     }
+}
+
+// Возвращает прочитанные данные из файла "name" находящегося по пути:
+// /Users/lawr/Library/Containers/JA.GenDic/Data/Documents/
+func ReadToFile(name: String) -> String
+{
+    var text = ""
+    do
+    {
+        // Получение URL адресса папки с документами
+        if let pathURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            // Добавление к URL имя файла
+            let fileURL = pathURL.appendingPathComponent(name)
+            // Чтение из диска
+            text = try String(contentsOf: fileURL)
+            print("Сохранение прошло успешно!")
+            //print("text:", text)
+            print("fileURL:", fileURL)
+            print("pathURL:", pathURL)
+            return text
+        }
+    } catch { print("error:", error) }
+    return text
+}
+
+// Записывает данные из "text" в файл с именем "name" находящегося по пути:
+// /Users/lawr/Library/Containers/JA.GenDic/Data/Documents/
+func WriteToFile(name: String, text: String)
+{
+    do
+    {
+        // Получение URL адресса папки с документами
+        if let pathURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            // Cоздание конечного URL для сохраняемого текстового файла
+            let fileURL = pathURL.appendingPathComponent(name)
+            // Запись на диск
+            try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            print("Запись прошла успешно!")
+            //print("text:", text)
+            print("fileURL:", fileURL)
+            print("pathURL:", pathURL)
+        }
+    } catch { print("error:", error) }
 }
 
 class ViewController: NSViewController {
@@ -129,47 +171,12 @@ class ViewController: NSViewController {
     @IBOutlet weak var EditSave: NSTextField!
     @IBAction func ButtonSave(_ sender: Any)
     {
-        // Сохранение на диск
-        do {
-            // Получение URL адресса папки с документами
-            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                // Cоздание конечного URL для сохраняемого текстового файла
-                let fileURL = documentDirectory.appendingPathComponent(EditSave.stringValue)
-                // Запись на диск
-                try StrMas.write(to: fileURL, atomically: false, encoding: .utf8)
-                print("Сохранение прошло успешно")
-        // Чтение из диска
-                //let savedText = try String(contentsOf: fileURL)
-                //print("savedText:", savedText)
-                print("fileURL:", fileURL)
-                print("documentDirectory:", documentDirectory)
-            }
-        } catch { print("error:", error) }
+            WriteToFile(name: EditSave.stringValue, text: StrMas)
+            ViewConsole.stringValue = ViewConsole.stringValue + "СОХРАНЕНИЕ ПРОШЛО УСПЕШНО!\n"
+            ViewConsole.stringValue = ViewConsole.stringValue + "Путь сохранения: /Users/lawr/Library/Containers/JA.GenDic/Data/Documents/\(EditSave.stringValue)\n"
+    }
         
-        // Вывод Сообщения
-        ViewConsole.stringValue = ViewConsole.stringValue + "СОХРАНЕНИЕ ПРОШЛО УСПЕШНО!\n"
-        ViewConsole.stringValue = ViewConsole.stringValue + "Путь сохранения: /Users/lawr/Library/Containers/JA.GenDic/Data/Documents/\(EditSave.stringValue)\n"
-    }
     
-    func ReadToFile(name: String) -> String
-    {
-        var savedText = ""
-        do {
-            // Получение URL адресса папки с документами
-            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-            {
-                // Добавление к URL имя файла
-                let fileURL = documentDirectory.appendingPathComponent(name)
-                // Чтение из диска
-                savedText = try String(contentsOf: fileURL)
-                print("savedText:", savedText)
-                print("fileURL:", fileURL)
-                print("documentDirectory:", documentDirectory)
-                return savedText
-            }
-        } catch { }
-        return savedText
-    }
     
     
     // БЛОК ОТВЕЧАЮЩИЙ ЗА РАБОТУ СО СТРОКОЙ
@@ -198,7 +205,7 @@ class ViewController: NSViewController {
         }
     }
     
-    // ---------------------------------------
+    // -------------------------------------+--
     
     
     @IBOutlet weak var ViewAbout: NSBox!
@@ -241,12 +248,16 @@ class ViewController: NSViewController {
     // Блок отвечающий за Генерацию даты
     
     // Блок отвечающий за Объединение файлов
-    @IBOutlet weak var NameFileStart: NSTextField!
+    @IBOutlet weak var NameFileOne: NSTextField!
+    @IBOutlet weak var NameFileTwo: NSTextField!
     @IBOutlet weak var NameFileFinish: NSTextField!
     @IBAction func ButtonMerger(_ sender: Any)
     {
-       // var x = ReadToFile(name: NameFileStart.stringValue)
-        NameFileStart.stringValue = "lk"
+       var File1 = ReadToFile(name: NameFileOne.stringValue)
+       var File2 = ReadToFile(name: NameFileTwo.stringValue)
+       var File3 = File1 + "\n" + File2 + "\n"
+       WriteToFile(name: NameFileFinish.stringValue, text: File3)
+
     }
     
 }
